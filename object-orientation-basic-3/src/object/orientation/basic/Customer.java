@@ -10,6 +10,12 @@ public class Customer {
     private String name;
     private Integer age;
 
+    public Customer(String id, String name, Integer age) {
+        this.id = id;
+        this.name = name;
+        this.age = age;
+    }
+    
     public String getName() {
         return name;
     }

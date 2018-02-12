@@ -6,11 +6,11 @@ package object.orientation.basic;
  */
 public class SaleLine {
 
-    private final Product produto;
+    private final Product product;
     private final Integer quantity;
 
     private SaleLine(Product product, Integer quantity) {
-        this.produto = product;
+        this.product = product;
         this.quantity = quantity;
     }
 
@@ -23,11 +23,11 @@ public class SaleLine {
     }
 
     public Double getLineTotal() {
-        return produto.getPrice() * quantity;
+        return product.getPrice() * quantity;
     }
 
-    public Product getProduto() {
-        return produto;
+    public Product getProduct() {
+        return product;
     }
 
     public Integer getQuantity() {

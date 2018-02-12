@@ -21,10 +21,7 @@ public class SaleFactory {
     }
 
     private static Customer getCustomer() {
-        Customer cliente = new Customer();
-        cliente.setName("Willian Oak");
-        cliente.setId("123456789");
-        return cliente;
+        return new Customer("123456789", "Willian Oak", 60 );        
     }
 
     private static List<SaleLine> getItens() {

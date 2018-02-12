@@ -14,7 +14,7 @@ public class Start {
     public static void main(String[] args) {
         Sale sale = SaleFactory.getSale();
         
-        
+        CashRegister.sell(sale);
     }
 
 }
