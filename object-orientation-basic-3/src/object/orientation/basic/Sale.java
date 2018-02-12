@@ -43,7 +43,7 @@ public class Sale {
     public void  calcDiscounts() {
         discount = 0d;
         if(customer != null && customer.getAge() > 70)
-            discount = total - (total * 0.9);
+            discount = total * 0.1;
     }
 
     public Double getDiscount() {
