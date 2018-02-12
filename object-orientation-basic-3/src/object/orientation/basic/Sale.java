@@ -9,8 +9,7 @@ import java.util.List;
 public class Sale {
 
     private Customer customer;
-    private List<SaleLine> lines;
-    private NFE nf;
+    private List<SaleLine> lines;    
 
     public Customer getCustomer() {
         return customer;
@@ -33,15 +32,11 @@ public class Sale {
         for (SaleLine line : lines) {
             total += line.getLineTotal();
         }
+        
+        if(customer.getAge() > 70)
+            total = (total * 0.9);
+        
         return total;
-    }
-
-    public String getNfXml() {
-        return nf.toXml(this);
-    }
-
-    public void setNf(NFE nf) {
-        this.nf = nf;
     }
 
 }
