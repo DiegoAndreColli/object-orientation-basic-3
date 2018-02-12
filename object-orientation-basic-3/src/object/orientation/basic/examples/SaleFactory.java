@@ -13,17 +13,20 @@ import object.orientation.basic.SaleLine;
  */
 public class SaleFactory {
 
-    public static Sale getSale() {
+    public static Sale getRegularSale() {
         Sale sale = new Sale();
-        sale.setCustomer(getCustomer());
+        sale.setCustomer(new Customer("123456789", "Willian Oak", 60 ));
         sale.setLines(getItens());        
         return sale;
     }
 
-    private static Customer getCustomer() {
-        return new Customer("123456789", "Willian Oak", 60 );        
+    public static Sale getAncientSale() {
+        Sale sale = new Sale();
+        sale.setCustomer(new Customer("987654321", "Thomaz Franz", 90 ));
+        sale.setLines(getItens());        
+        return sale;
     }
-
+    
     private static List<SaleLine> getItens() {
         List<SaleLine> list = new ArrayList<>();
         list.add(new SaleLine(new Product("Bread", 0.20), 10));
