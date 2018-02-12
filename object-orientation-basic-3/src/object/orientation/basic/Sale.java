@@ -33,7 +33,7 @@ public class Sale {
             total += line.getLineTotal();
         }
         
-        if(customer.getAge() > 70)
+        if(customer != null && customer.getAge() > 70)
             total = (total * 0.9);
         
         return total;

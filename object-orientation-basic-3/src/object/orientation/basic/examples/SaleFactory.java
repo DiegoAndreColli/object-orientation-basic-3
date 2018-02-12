@@ -33,5 +33,4 @@ public class SaleFactory {
         return list;
     }
 
-
 }

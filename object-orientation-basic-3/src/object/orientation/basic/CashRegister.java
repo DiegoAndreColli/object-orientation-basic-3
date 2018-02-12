@@ -10,41 +10,43 @@ public class CashRegister {
     
     public static void sell(Sale sale){
         
-        String welcome = String.format("%35s", " Welcome ");
-        String headers = String.format("%-40s", "Product")
-                 .concat(String.format("%15s", "Price"))
-                 .concat(String.format("%15s", "Quantity"))
-                 .concat(String.format("%15s", "Total"));
-        
-        
-        
-
         DecimalFormat df = new DecimalFormat("0.00");
+        
+        String welcome = String.format("%45s", "Welcome");
+        String headers = String.format("%-40s", "Product")
+                .concat(String.format("%15s", "Price"))
+                .concat(String.format("%15s", "Quantity"))
+                .concat(String.format("%15s", "Total"));        
+        String lines = getSaleBody(sale, df);
+        String total = String.format("%-70s", "Total: ")
+                .concat(String.format("%15s", df.format(sale.getTotal())));
+        String totalWithDiscounts = String.format("%-70s", "Final Total: ")
+                .concat(String.format("%15s", df.format(sale.getTotal())));
+        
+        String finalString = welcome.concat("\n")
+                .concat(headers).concat("\n")
+                .concat(lines).concat("\n")
+                .concat(total).concat(totalWithDiscounts);
+        
+        show(finalString);
+    }
+           
+    private static String getSaleBody(Sale sale, DecimalFormat df){        
         StringBuilder lines = new StringBuilder();
         for (SaleLine line : sale.getLines()) {
-            String show = 
+            lines.append(
                        String.format("%-40s", line.getProduct().getName())
                .concat(String.format("%15s", df.format(line.getProduct().getPrice())))
                .concat(String.format("%15s", line.getQuantity()))
                .concat(String.format("%15s", df.format(line.getLineTotal())))
-               .concat("\n");
-            
-            lines.append(show);            
+               .concat("\n")
+            );            
         }
         
-        String total = String.format("%-70s", "Total: ").concat(String.format("%15s", df.format(sale.getTotal())));
-        String totalWithDiscounts = String.format("%-70s", "Final Total: ").concat(String.format("%15s", df.format(sale.getTotal())));
-        
-        System.out.println(welcome);
-        System.out.println(headers);
-        System.out.println();
-        System.out.println(lines);
-        System.out.println();
-        System.out.println(total);
-        System.out.println(totalWithDiscounts);
-        
-        sale.getTotal();        
+        return lines.toString();
     }
-    
-    
+        
+    private static void show(String string){
+        System.out.println(string);
+    }
 }
