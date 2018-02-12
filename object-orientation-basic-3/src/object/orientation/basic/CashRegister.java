@@ -12,9 +12,9 @@ public class CashRegister {
         
         String welcome = String.format("%35s", " Welcome ");
         String headers = String.format("%-40s", "Product")
-                .concat(String.format("%-15s", "Price"))
-                .concat(String.format("%-15s", "Quantity"))
-                .concat(String.format("%15s", "Total"));
+                 .concat(String.format("%15s", "Price"))
+                 .concat(String.format("%15s", "Quantity"))
+                 .concat(String.format("%15s", "Total"));
         
         
         
@@ -22,9 +22,10 @@ public class CashRegister {
         DecimalFormat df = new DecimalFormat("0.00");
         StringBuilder lines = new StringBuilder();
         for (SaleLine line : sale.getLines()) {
-            String show = String.format("%-40s", line.getProduct().getName())
-               .concat(String.format("%-15s", df.format(line.getProduct().getPrice())))
-               .concat(String.format("%-15s", line.getQuantity()))
+            String show = 
+                       String.format("%-40s", line.getProduct().getName())
+               .concat(String.format("%15s", df.format(line.getProduct().getPrice())))
+               .concat(String.format("%15s", line.getQuantity()))
                .concat(String.format("%15s", df.format(line.getLineTotal())))
                .concat("\n");
             

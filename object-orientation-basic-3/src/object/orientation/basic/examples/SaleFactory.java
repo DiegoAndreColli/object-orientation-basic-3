@@ -26,10 +26,10 @@ public class SaleFactory {
 
     private static List<SaleLine> getItens() {
         List<SaleLine> list = new ArrayList<>();
-        list.add(SaleLine.getSaleLineProduct(new Product("Pãozinho", 0.20), 10));
+        list.add(SaleLine.getSaleLineProduct(new Product("Bread", 0.20), 10));
         list.add(SaleLine.getSaleLineProduct(new Product("Lampada", 2.20), 7));
-        list.add(SaleLine.getSaleLineProduct(new Product("Bicicleta", 8000d), 1));
-        list.add(SaleLine.getSaleLineProduct(new Product("Pasta de Dente", 5d), 3));
+        list.add(SaleLine.getSaleLineProduct(new Product("Lamp", 8000d), 1));
+        list.add(SaleLine.getSaleLineProduct(new Product("Toothpaste", 5d), 3));
         return list;
     }
 
