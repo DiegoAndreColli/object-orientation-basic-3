@@ -26,7 +26,8 @@ public class CashRegister {
         String finalString = welcome.concat("\n")
                 .concat(headers).concat("\n")
                 .concat(lines).concat("\n")
-                .concat(total).concat(totalWithDiscounts);
+                .concat(total).concat("\n")
+                .concat(totalWithDiscounts);
         
         show(finalString);
     }
