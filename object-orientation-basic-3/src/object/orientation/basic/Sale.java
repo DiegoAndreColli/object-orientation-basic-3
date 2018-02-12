@@ -9,10 +9,10 @@ import java.util.List;
 public class Sale {
 
     private Customer customer;
-    private List<SaleLine> lines;    
+    private List<SaleLine> lines;
     private Double total;
     private Double discount;
-    
+
     public Customer getCustomer() {
         return customer;
     }
@@ -35,11 +35,11 @@ public class Sale {
             total += line.getLineTotal();
         }
     }
-    
+
     public Double getTotal() {
         return total;
     }
-    
+
     public void  calcDiscounts() {
         discount = 0d;
         if(customer != null && customer.getAge() > 70)
@@ -49,7 +49,7 @@ public class Sale {
     public Double getDiscount() {
         return discount;
     }
-    
+
     public Double getValueToPay(){
         return total - discount;
     }
