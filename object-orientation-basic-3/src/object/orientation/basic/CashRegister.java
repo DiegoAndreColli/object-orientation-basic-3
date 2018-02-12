@@ -10,6 +10,8 @@ public class CashRegister {
     
     public static void sell(Sale sale){
         
+        calculateTransaction(sale);        
+        
         DecimalFormat df = new DecimalFormat("0.00");
         
         String welcome = String.format("%45s", "Welcome");
@@ -21,7 +23,7 @@ public class CashRegister {
         String total = String.format("%-70s", "Total: ")
                 .concat(String.format("%15s", df.format(sale.getTotal())));
         String totalWithDiscounts = String.format("%-70s", "Final Total: ")
-                .concat(String.format("%15s", df.format(sale.getTotal())));
+                .concat(String.format("%15s", df.format(sale.getValueToPay())));
         
         String finalString = welcome.concat("\n")
                 .concat(headers).concat("\n")
@@ -30,6 +32,11 @@ public class CashRegister {
                 .concat(totalWithDiscounts);
         
         show(finalString);
+    }
+    
+    private static void calculateTransaction(Sale sale){
+        sale.calcTotal();
+        sale.calcDiscounts();
     }
            
     private static String getSaleBody(Sale sale, DecimalFormat df){        

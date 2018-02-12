@@ -10,7 +10,9 @@ public class Sale {
 
     private Customer customer;
     private List<SaleLine> lines;    
-
+    private Double total;
+    private Double discount;
+    
     public Customer getCustomer() {
         return customer;
     }
@@ -27,16 +29,29 @@ public class Sale {
         this.lines = lines;
     }
 
-    public Double getTotal() {
-        Double total = 0d;
+    public void calcTotal() {
+        total = 0d;
         for (SaleLine line : lines) {
             total += line.getLineTotal();
         }
-        
-        if(customer != null && customer.getAge() > 70)
-            total = (total * 0.9);
-        
+    }
+    
+    public Double getTotal() {
         return total;
+    }
+    
+    public void  calcDiscounts() {
+        discount = 0d;
+        if(customer != null && customer.getAge() > 70)
+            discount = total - (total * 0.9);
+    }
+
+    public Double getDiscount() {
+        return discount;
+    }
+    
+    public Double getValueToPay(){
+        return total - discount;
     }
 
 }
