@@ -15,16 +15,9 @@ public class Start {
     public static void main(String[] args) {
 
         List<Sale> list = new ArrayList<>();
-
-        Sale sale1 = SaleFactory.getSaleNFEXML();
-        Sale sale2 = SaleFactory.getSaleNFCEXML();
-        Sale sale3 = SaleFactory.getSaleNFSEXML();
-
-        list.add(sale1);
-        list.add(sale2);
-        list.add(sale3);
-
-        FiscalService.send(list);
+        Sale sale = SaleFactory.getSaleNFE();
+        list.add(sale);
+        InvoiceModule.send(list);
     }
 
 }

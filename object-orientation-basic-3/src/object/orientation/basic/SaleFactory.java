@@ -9,26 +9,34 @@ import java.util.List;
  */
 public class SaleFactory {
 
-    public static Sale getSaleNFEXML() {
-        Sale sale = new Sale();
-        sale.setCustomer(getCustomer());
-        sale.setLines(getItens());
-        sale.setNf(new NFEXML());
-        return sale;
-    }
+//    public static Sale getSaleNFEXML() {
+//        Sale sale = new Sale();
+//        sale.setCustomer(getCustomer());
+//        sale.setLines(getItens());
+//        sale.setNf(new NFEXML());
+//        return sale;
+//    }
+//
+//    public static Sale getSaleNFCEXML() {
+//        Sale sale = new Sale();
+//        sale.setLines(getItens());
+//        sale.setNf(new NFCEXML());
+//        return sale;
+//    }
 
-    public static Sale getSaleNFCEXML() {
-        Sale sale = new Sale();
-        sale.setLines(getItens());
-        sale.setNf(new NFCEXML());
-        return sale;
-    }
-
-    public static Sale getSaleNFSEXML() {
+//    public static Sale getSaleNFSEXML() {
+//        Sale sale = new Sale();
+//        sale.setCustomer(getCustomer());
+//        sale.setLines(getServices());
+//        sale.setNf(new NFE());
+//        return sale;
+//    }
+    
+    public static Sale getSaleNFE() {
         Sale sale = new Sale();
         sale.setCustomer(getCustomer());
         sale.setLines(getServices());
-        sale.setNf(new NFSEXML());
+        sale.setNf(new NFE());
         return sale;
     }
 

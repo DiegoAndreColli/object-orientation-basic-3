@@ -4,9 +4,8 @@ package object.orientation.basic;
  *
  * @author User
  */
-public class NFSEXML implements NFXML {
+public class NFE{
 
-    @Override
     public String toXml(Sale sale) {
         StringBuilder xml = new StringBuilder("<xml version=\"1.0\" >");
         xml.append(getXMLHeader(sale));

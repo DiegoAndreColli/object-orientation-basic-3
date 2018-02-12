@@ -10,7 +10,7 @@ public class Sale {
 
     private Customer customer;
     private List<SaleLine> lines;
-    private NFXML nf;
+    private NFE nf;
 
     public Customer getCustomer() {
         return customer;
@@ -40,7 +40,7 @@ public class Sale {
         return nf.toXml(this);
     }
 
-    public void setNf(NFXML nf) {
+    public void setNf(NFE nf) {
         this.nf = nf;
     }
 

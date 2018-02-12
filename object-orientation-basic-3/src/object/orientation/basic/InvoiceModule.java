@@ -6,7 +6,7 @@ import java.util.List;
  *
  * @author User
  */
-public class FiscalService {
+public class InvoiceModule {
 
     public static void send(List<Sale> list) {
         for (Sale sale : list) {
