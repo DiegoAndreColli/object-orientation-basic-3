@@ -6,10 +6,10 @@ import java.util.List;
  *
  * @author User
  */
-public class Sale {
+public class ProductionOrder {
 
     private Customer customer;
-    private List<SaleLine> lines;
+    private List<OrderLine> lines;
     private Double total;
     private Double discount;
 
@@ -21,17 +21,17 @@ public class Sale {
         this.customer = customer;
     }
 
-    public List<SaleLine> getLines() {
+    public List<OrderLine> getLines() {
         return lines;
     }
 
-    public void setLines(List<SaleLine> lines) {
+    public void setLines(List<OrderLine> lines) {
         this.lines = lines;
     }
 
     public void calcTotal() {
         total = 0d;
-        for (SaleLine line : lines) {
+        for (OrderLine line : lines) {
             total += line.getLineTotal();
         }
     }

@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
  */
 public class CashRegister {
 
-    public static void sell(Sale sale){
+    public static void sell(ProductionOrder sale){
 
         calculateTransaction(sale);
 
@@ -34,14 +34,14 @@ public class CashRegister {
         show(finalString);
     }
 
-    private static void calculateTransaction(Sale sale){
+    private static void calculateTransaction(ProductionOrder sale){
         sale.calcTotal();
         sale.calcDiscounts();
     }
 
-    private static String getSaleBody(Sale sale, DecimalFormat df){
+    private static String getSaleBody(ProductionOrder sale, DecimalFormat df){
         StringBuilder lines = new StringBuilder();
-        for (SaleLine line : sale.getLines()) {
+        for (OrderLine line : sale.getLines()) {
             lines.append(
                        String.format("%-40s", line.getProduct().getName())
                .concat(String.format("%15s", df.format(line.getProduct().getPrice())))

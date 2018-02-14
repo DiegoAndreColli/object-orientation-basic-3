@@ -12,10 +12,10 @@ public class Start {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Sale sale1 = SaleFactory.getRegularSale();
+        ProductionOrder sale1 = SaleFactory.getRegularSale();
         CashRegister.sell(sale1);
         
-        Sale sale2 = SaleFactory.getAncientSale();
+        ProductionOrder sale2 = SaleFactory.getAncientSale();
         CashRegister.sell(sale2);
     }
 

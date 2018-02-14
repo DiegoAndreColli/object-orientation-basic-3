@@ -4,12 +4,12 @@ package object.orientation.basic;
  *
  * @author User
  */
-public class SaleLine {
+public class OrderLine {
 
     private final Product product;
     private final Integer quantity;
 
-    public SaleLine(Product product, Integer quantity) {
+    public OrderLine(Product product, Integer quantity) {
         this.product = product;
         this.quantity = quantity;
     }
