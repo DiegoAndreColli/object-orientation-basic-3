@@ -8,10 +8,12 @@ public abstract class Employee {
 
     protected String name;
     protected Double salary;
+    protected Double remuneration;
 
     public Employee(String name) {
         this.name = name;
         this.salary = 0.0;
+        this.remuneration = 0.0;
     }
 
     public String getName() {
@@ -20,11 +22,14 @@ public abstract class Employee {
 
     public void receivePayment(Double payment) {
         this.salary = payment;
-        this.salary += getBonus();
     }
 
-    public Double getSalary() {
-        return salary;
+    public void sumTotalRemuneration(){
+        this.remuneration = this.salary + getBonus();
+    }
+    
+    public Double getRemuneration() {
+        return remuneration;
     }
 
     public abstract Double getBonus();

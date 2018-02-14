@@ -18,9 +18,21 @@ public class Start {
         analyst.receivePayment(1000.0);
         manager.receivePayment(4000.0);
 
-        System.out.println(intern.getName() + " " + intern.getSalary());
-        System.out.println(analyst.getName() + " " + analyst.getSalary());
-        System.out.println(manager.getName() + " " + manager.getSalary());
+        intern.sumTotalRemuneration();
+        analyst.sumTotalRemuneration();
+        manager.sumTotalRemuneration();
+
+        show(intern);
+        show(analyst);
+        show(manager);
+    }
+
+    public static void show(Employee employee) {
+
+        String reportLine = String.format("%-40s", employee.getName())
+                .concat(String.format("%15s", employee.getRemuneration()));
+
+        System.out.println(reportLine);
 
     }
 
