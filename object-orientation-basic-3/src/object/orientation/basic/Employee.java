@@ -19,7 +19,8 @@ public abstract class Employee {
     }
 
     public void receivePayment(Double payment) {
-        this.salary = payment + getBonus();
+        this.salary = payment;
+        this.salary += getBonus();
     }
 
     public Double getSalary() {

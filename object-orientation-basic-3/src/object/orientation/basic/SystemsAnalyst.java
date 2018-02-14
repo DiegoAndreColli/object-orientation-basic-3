@@ -4,7 +4,7 @@ package object.orientation.basic;
  *
  * @author User
  */
-public class SystemsAnalyst extends Employee{
+public class SystemsAnalyst extends Employee {
 
     public SystemsAnalyst(String name) {
         super(name);
@@ -15,7 +15,5 @@ public class SystemsAnalyst extends Employee{
     public Double getBonus() {
         return this.salary * 0.1;
     }
-
-    
 
 }
