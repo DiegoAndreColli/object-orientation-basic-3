@@ -24,10 +24,10 @@ public abstract class Employee {
         this.salary = payment;
     }
 
-    public void sumTotalRemuneration(){
+    public void sumTotalRemuneration() {
         this.remuneration = this.salary + getBonus();
     }
-    
+
     public Double getRemuneration() {
         return remuneration;
     }
