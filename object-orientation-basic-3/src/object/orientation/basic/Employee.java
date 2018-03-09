@@ -6,30 +6,32 @@ package object.orientation.basic;
  */
 public abstract class Employee {
 
-    protected String name;
+    private Integer id;
+    private String name;
     protected Double salary;
-    protected Double remuneration;
 
-    public Employee(String name) {
-        this.name = name;
-        this.salary = 0.0;
-        this.remuneration = 0.0;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void receivePayment(Double payment) {
-        this.salary = payment;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void sumTotalRemuneration() {
-        this.remuneration = this.salary + getBonus();
+    public Double getSalary() {
+        return salary;
     }
 
-    public Double getRemuneration() {
-        return remuneration;
+    public void setSalary(Double salary) {
+        this.salary = salary;
     }
 
     public abstract Double getBonus();
