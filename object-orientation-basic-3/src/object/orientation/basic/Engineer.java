@@ -8,7 +8,7 @@ public class Engineer extends Employee {
 
     @Override
     public Double getBonus() {
-        return this.salary * 0.25;
+        return this.salary * 0.10 + 500;
     }
 
 }

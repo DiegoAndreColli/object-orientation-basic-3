@@ -1,5 +1,6 @@
 package object.orientation.basic;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,6 +12,10 @@ public class Manager extends Employee {
     private String creditCard;
     private List<Employee> employees;
 
+    public Manager() {
+        this.employees = new ArrayList();
+    }
+    
     public String getCreditCard() {
         return creditCard;
     }
